@@ -1,6 +1,9 @@
 class Asset < ActiveRecord::Base
-  acts_as_taggable
+  validates_presence_of :name, :owner
 
+  attr_accessible :name, :owner
+
+  acts_as_taggable
   mount_uploader :file, AssetUploader
 
   searchable do
