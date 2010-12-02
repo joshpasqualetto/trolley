@@ -5,3 +5,5 @@ tmp/**/*
 solr/data/**/*
 config/database.yml
 coverage*
+public/uploads/**/*
+public/assets/**/*

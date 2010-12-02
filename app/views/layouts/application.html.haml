@@ -2,8 +2,32 @@
 
 %html
 %head
-  %title Trolley Asset manager
-  = stylesheet_link_tag("tags")
-  = javascript_include_tag("jquery", "jquery.tagbox")
+  %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
+  %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+  %title Trolley - Asset manager
+  = csrf_meta_tag
+  = include_stylesheets(:main, :media => "all")
+
 %body
-  = yield
+  #header
+    .container_12
+      .grid_6
+        %ul#navigation
+          %li= link_to("Assets", root_path)
+          %li= link_to("Upload Asset", new_asset_path)
+      .grid_6
+        = form_tag(search_assets_path) do |f|
+          = text_field_tag("q", "")
+          = submit_tag("Search")
+
+  #content
+    .container_12
+      .grid_12
+        - unless flash_messages(flash).blank?
+          .grid_12
+            #flash_messages= raw(flash_messages(flash))
+
+        = yield
+
+  = include_javascripts(:common)
+  = yield(:javascript)

@@ -3,4 +3,5 @@ cd trolley
 bundle install
 rake db:create
 rake db:migrate
+rake sunspot:solr:start
 rails server

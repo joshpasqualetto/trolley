@@ -1,13 +1,27 @@
-= form_for @asset, :html => {:multipart => true} do |f| 
-  %p  
-    %label Asset upload
-    %p
-      = f.label :name
-      = f.text_field :name
-    = f.file_field :file
-    = f.hidden_field :file_cache
-    %div{:class => "tagbox tags clearfix"}
-      = @asset.tags.collect{ |t| t.name}.join(',')
-    = f.submit
-:javascript
-  $(function(){ $('.tagbox.tags').tagbox({seperator: /,/, name: 'tags[]'});})
+= semantic_form_for(@asset, :html => { :multipart => true }) do |f|
+  // %p
+  //   %label Asset upload
+  //   %p
+  //     = f.label :name
+  //     = f.text_field :name
+  //   = f.file_field :file
+  //   = f.hidden_field :file_cache
+  //   %div{:class => "tagbox tags clearfix"}
+  //     = @asset.tags.collect{ |t| t.name}.join(',')
+
+  = f.semantic_errors
+  = f.input(:name)
+  = f.input(:file, :as => :file)
+  = f.input(:file_cache, :as => :hidden)
+  .tagbox.tags.group
+    = @asset.tags.collect{ |t| t.name }.join(",")
+  = f.buttons
+
+- content_for(:javascript) do
+  :javascript
+    $(function() {
+      $(".tagbox.tags").tagbox({
+        seperator: /,/,
+        name: "asset[tag_list][]"
+      });
+    });
