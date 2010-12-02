@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 gem "rails", "3.0.1"
+gem "acts-as-taggable-on", "2.0.6"
 gem "autotest", :group => [:test]
 gem "autotest-rails", :group => [:test]
 gem "bistro_car"
@@ -21,13 +22,17 @@ gem "jammit"
 gem "launchy", :group => [:cucumber]
 gem "mocha", :group => [:test]
 gem "mysql2"
+gem "nokogiri"
 gem "pickle", :group => [:test, :cucumber]
 gem "rails3-generators", :group => :development
 gem "remarkable_activemodel", ">=4.0.0.alpha4", :group => :test
+gem "rmagick", :require => "RMagick"
 gem "rspec-rails", "~> 2.0.0", :group => [:test, :development]
 gem "ruby_parser", :group => [:development]
 gem "shoulda", :git => "git://github.com/thoughtbot/shoulda.git", :group => [:test]
 gem "spork", :group => [:cucumber]
+gem "sunspot_rails", "1.2.rc4"
+gem "sqlite3"
 gem "thin", :group => [:test, :cucumber, :development]
 gem "timecop", :group => [:test, :cucumber]
 gem "will_paginate", "~> 3.0.pre2"
