@@ -1,34 +1,33 @@
-source 'http://rubygems.org'
-
-gem 'rails', '3.0.1'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'mysql', '2.8.1'
-gem 'devise'
-gem 'carrierwave'
-gem "sunspot_rails", "1.2.rc4"
-gem "nokogiri"
-gem "haml"
-gem "acts-as-taggable-on"
-gem 'rmagick'
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+source "http://rubygems.org"
+gem "rails", "3.0.1"
+gem "autotest", :group => [:test]
+gem "autotest-rails", :group => [:test]
+gem "bistro_car"
+gem "cancan"
+gem "capybara", "0.4.0", :group => [:cucumber]
+gem "carrierwave", "0.5.0"
+gem "cover_me", ">= 1.0.0.rc4", :group => [:test]
+gem "css_sprite", "1.4.10"
+gem "cucumber", :group => [:cucumber]
+gem "cucumber-rails", :group => [:cucumber]
+gem "database_cleaner", :group => [:test, :cucumber]
+gem "devise", ">= 1.1.3"
+gem "fabrication", :group => [:test, :cucumber]
+gem "faker", :group => [:test]
+gem "formtastic", "1.1.0"
+gem "haml", ">= 3.0.21"
+gem "hpricot", :group => [:development]
+gem "jammit"
+gem "launchy", :group => [:cucumber]
+gem "mocha", :group => [:test]
+gem "mysql2"
+gem "pickle", :group => [:test, :cucumber]
+gem "rails3-generators", :group => :development
+gem "remarkable_activemodel", ">=4.0.0.alpha4", :group => :test
+gem "rspec-rails", "~> 2.0.0", :group => [:test, :development]
+gem "ruby_parser", :group => [:development]
+gem "shoulda", :git => "git://github.com/thoughtbot/shoulda.git", :group => [:test]
+gem "spork", :group => [:cucumber]
+gem "thin", :group => [:test, :cucumber, :development]
+gem "timecop", :group => [:test, :cucumber]
+gem "will_paginate", "~> 3.0.pre2"
