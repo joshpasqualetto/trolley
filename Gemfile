@@ -20,13 +20,13 @@ gem "haml", ">= 3.0.21"
 gem "hpricot", :group => [:development]
 gem "jammit"
 gem "launchy", :group => [:cucumber]
+gem "mini_magick"
 gem "mocha", :group => [:test]
 gem "mysql2"
 gem "nokogiri"
 gem "pickle", :group => [:test, :cucumber]
 gem "rails3-generators", :group => :development
 gem "remarkable_activemodel", ">=4.0.0.alpha4", :group => :test
-gem "rmagick", :require => "RMagick"
 gem "rspec-rails", "~> 2.0.0", :group => [:test, :development]
 gem "ruby_parser", :group => [:development]
 gem "shoulda", :git => "git://github.com/thoughtbot/shoulda.git", :group => [:test]
