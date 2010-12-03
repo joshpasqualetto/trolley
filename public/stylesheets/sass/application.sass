@@ -1,7 +1,7 @@
 @import "common"
 
 body
-  background-color: rgba(250, 250, 250, 1)
+  background-image: url(/images/background.gif) top left
   font-family: Helvetica, Arial, sans-serif
   font-size: 1em
 
@@ -16,37 +16,64 @@ p
   margin-bottom: 1em
 
 a
+  color: #C60
   text-decoration: none
 
   &.button
     @include button
 
 #header
-  background-color: rgba(100, 100, 100, 1)
-  color: $white
-  margin-bottom: 2em
+  background-color: lighten($black, 25%)
+  height: 1.35em
+  margin-bottom: 1em
   padding: .25em
 
   ul
     li
+      border-right: 1px solid lighten($black, 35%)
       display: inline-block
       margin-right: 1em
+      padding-right: 1em
+
+      &:last-child
+        border-right: 0 none
 
       a
-        color: $white
+        color: darken($white, 25%)
+        font-size: .75em
         text-decoration: none
 
+        &:hover
+          color: $white
+
 #content
+  margin-bottom: 3em
+
   .asset-summary
-    @include rounded(5px)
-    @include box-shadow(0px, 1px, 5px, lighten($black, 75%))
+    @include box-shadow(0px, 1px, 5px, lighten($black, 90%))
     background-color: $white
     margin-bottom: 1em
-    padding: 10px 10px 1px
+    padding: 10px
+
+    h3
+      text-shadow: 0 1px 3px lighten($black, 80%)
 
     img
       margin-bottom: 1em
 
     p.tags
+      color: lighten($black, 60%)
       height: 1.25em
+      margin: 0
       overflow: hidden
+
+      a
+        color: lighten($black, 60%)
+
+#footer
+  .container_12
+    border-top: 1px solid lighten($black, 90%)
+    color: lighten($black, 80%)
+    font-size: .75em
+    margin-top: 3em
+    padding: 1em 0
