@@ -1,21 +1,52 @@
-.group:after
-  content: "."
-  display: block
-  height: 0
-  clear: both
-  visibility: hidden
+@import "common"
 
-.left
-  float: left
+body
+  background-color: rgba(250, 250, 250, 1)
+  font-family: Helvetica, Arial, sans-serif
+  font-size: 1em
 
-.right
-  float: right
+h2
+  font-size: 2.25em
+  margin-bottom: .5em
 
-.text-center
-  text-align: center !important
+h3
+  margin-bottom: .5em
 
-.text-left
-  text-align: left !important
+p
+  margin-bottom: 1em
 
-.text-right
-  text-align: right !important
+a
+  text-decoration: none
+
+  &.button
+    @include button
+
+#header
+  background-color: rgba(100, 100, 100, 1)
+  color: $white
+  margin-bottom: 2em
+  padding: .25em
+
+  ul
+    li
+      display: inline-block
+      margin-right: 1em
+
+      a
+        color: $white
+        text-decoration: none
+
+#content
+  .asset-summary
+    @include rounded(5px)
+    @include box-shadow(0px, 1px, 5px, lighten($black, 75%))
+    background-color: $white
+    margin-bottom: 1em
+    padding: 10px 10px 1px
+
+    img
+      margin-bottom: 1em
+
+    p.tags
+      height: 1.25em
+      overflow: hidden
