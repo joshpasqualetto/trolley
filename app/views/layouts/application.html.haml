@@ -13,21 +13,29 @@
     .container_12
       .grid_6
         %ul#navigation
-          %li= link_to("All Assets", root_path)
-          %li= link_to("Upload Asset", new_asset_path)
-          %li= link_to("Logout", "")
+          %li= link_to("Browse Assets", root_path)
+          %li= link_to("Upload New Asset", new_asset_path)
+          // %li= link_to("Logout", "")
       .grid_6.text-right
-        = form_tag(search_assets_path) do |f|
-          = text_field_tag("q", "")
-          = submit_tag("Search")
+        // = form_tag(search_assets_path) do |f|
+        //   = text_field_tag("q", "")
+        //   = submit_tag("Search")
 
-  #content
+  #content.group
     .container_12
       - unless flash_messages(flash).blank?
         .grid_12
           #flash_messages= raw(flash_messages(flash))
 
       = yield
+
+  #footer
+    .container_12
+      .grid_6
+        %p Trolley - Asset Manager
+
+      .grid_6.text-right
+        %p= link_to("https://github.com/sniperd/trolley.git")
 
   = include_javascripts(:common)
   = yield(:javascript)

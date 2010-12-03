@@ -21,7 +21,7 @@
   text-align: right !important; }
 
 body {
-  background-color: #fafafa;
+  background-image: url(/images/background.gif) top left;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1em; }
 
@@ -36,6 +36,7 @@ p {
   margin-bottom: 1em; }
 
 a {
+  color: #cc6600;
   text-decoration: none; }
   a.button {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
@@ -64,38 +65,48 @@ a {
     text-shadow: 0 0 3px #adb22d; }
 
 #header {
-  background-color: #646464;
-  color: white;
-  margin-bottom: 2em;
+  background-color: #404040;
+  height: 1.35em;
+  margin-bottom: 1em;
   padding: 0.25em; }
   #header ul li {
+    border-right: 1px solid #595959;
     display: inline-block;
-    margin-right: 1em; }
+    margin-right: 1em;
+    padding-right: 1em; }
+    #header ul li:last-child {
+      border-right: 0 none; }
     #header ul li a {
-      color: white;
+      color: #bfbfbf;
+      font-size: 0.75em;
       text-decoration: none; }
+      #header ul li a:hover {
+        color: white; }
 
-#content .asset-summary {
-  border-top-left-radius: 5px;
-  -moz-border-top-left-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-top-right-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -moz-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -moz-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  box-shadow: 0px 1px 5px #bfbfbf;
-  -webkit-box-shadow: 0px 1px 5px #bfbfbf;
-  -moz-box-shadow: 0px 1px 5px #bfbfbf;
-  background-color: white;
-  margin-bottom: 1em;
-  padding: 10px 10px 1px; }
-  #content .asset-summary img {
-    margin-bottom: 1em; }
-  #content .asset-summary p.tags {
-    height: 1.25em;
-    overflow: hidden; }
+#content {
+  margin-bottom: 3em; }
+  #content .asset-summary {
+    box-shadow: 0px 1px 5px #e6e6e6;
+    -webkit-box-shadow: 0px 1px 5px #e6e6e6;
+    -moz-box-shadow: 0px 1px 5px #e6e6e6;
+    background-color: white;
+    margin-bottom: 1em;
+    padding: 10px; }
+    #content .asset-summary h3 {
+      text-shadow: 0 1px 3px #cccccc; }
+    #content .asset-summary img {
+      margin-bottom: 1em; }
+    #content .asset-summary p.tags {
+      color: #999999;
+      height: 1.25em;
+      margin: 0;
+      overflow: hidden; }
+      #content .asset-summary p.tags a {
+        color: #999999; }
+
+#footer .container_12 {
+  border-top: 1px solid #e6e6e6;
+  color: #cccccc;
+  font-size: 0.75em;
+  margin-top: 3em;
+  padding: 1em 0; }
