@@ -2,11 +2,11 @@ class AssetUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   version(:thumb) do
-    process(:resize_to_fill => [ 100, 100 ])
+    process(:resize_to_fill => [ 200, 150 ])
   end
 
   version(:medium) do
-    process(:resize_to_fill => [ 450, 450 ])
+    process(:resize_to_fill => [ 400, 300 ])
   end
 
   def relative_dir

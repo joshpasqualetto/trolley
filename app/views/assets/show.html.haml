@@ -1,5 +1,9 @@
-%h1= @asset.name
-= image_tag(@asset.file_url(:thumb))
-= display_tags(@asset.tags)
+.grid_6
+  %h2= @asset.name
+  = simple_format(@asset.description)
+  = display_tags(@asset.tags)
+  = link_to("Download File", download_asset_path(@asset), :class => "button")
 
-= link_to("Download", download_asset_path(@asset))
+.grid_6.text-right
+  = image_tag(@asset.file_url(:medium))
+  %p= link_to("Edit Asset", edit_asset_path(@asset))

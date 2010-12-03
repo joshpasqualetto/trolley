@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def display_tags(tags)
-    content_tag("div", :class => "tags") do
+    content_tag("p", :class => "tags") do
       tags.collect { |t| link_to(t.name, search_assets_path(:q => t.name)) }.join(", ")
     end
   end

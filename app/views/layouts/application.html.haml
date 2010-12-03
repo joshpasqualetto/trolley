@@ -9,25 +9,25 @@
   = include_stylesheets(:main, :media => "all")
 
 %body
-  #header
+  #header.group
     .container_12
       .grid_6
         %ul#navigation
-          %li= link_to("Assets", root_path)
+          %li= link_to("All Assets", root_path)
           %li= link_to("Upload Asset", new_asset_path)
-      .grid_6
+          %li= link_to("Logout", "")
+      .grid_6.text-right
         = form_tag(search_assets_path) do |f|
           = text_field_tag("q", "")
           = submit_tag("Search")
 
   #content
     .container_12
-      .grid_12
-        - unless flash_messages(flash).blank?
-          .grid_12
-            #flash_messages= raw(flash_messages(flash))
+      - unless flash_messages(flash).blank?
+        .grid_12
+          #flash_messages= raw(flash_messages(flash))
 
-        = yield
+      = yield
 
   = include_javascripts(:common)
   = yield(:javascript)
