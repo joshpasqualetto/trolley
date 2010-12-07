@@ -1,0 +1,5 @@
+.grid_3
+  .asset-summary
+    = link_to(thumbnail_uri(asset, :thumb), asset_path(asset))
+    %h3= link_to(asset.name, asset_path(asset))
+    = display_tags(asset.tags)

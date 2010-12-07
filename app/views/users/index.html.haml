@@ -1,0 +1,18 @@
+.grid_12
+  .right= link_to("Add New User", new_user_path, :class => "button")
+
+  %h2 Manage Users
+
+  %table
+    %tr
+      %th Email
+      %th.text-center Number of Assets
+      %th Roles
+      %th
+
+    - @users.each do |user|
+      %tr
+        %td= link_to(user.email, user_path(user))
+        %td.text-center= user.assets.count
+        %td= user.roles.collect { |r| r.name }.join(", ")
+        %td.text-right= link_to("Edit User", edit_user_path(user))

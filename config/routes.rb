@@ -1,4 +1,7 @@
 Trolley::Application.routes.draw do
+  devise_for :users
+  resources :users
+
   resources :assets do
     collection do
       match "search", :as => :search

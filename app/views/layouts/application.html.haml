@@ -9,17 +9,20 @@
   = include_stylesheets(:main, :media => "all")
 
 %body
-  #header.group
-    .container_12
-      .grid_6
-        %ul#navigation
-          %li= link_to("Browse Assets", root_path)
-          %li= link_to("Upload New Asset", new_asset_path)
-          // %li= link_to("Logout", "")
-      .grid_6.text-right
-        // = form_tag(search_assets_path) do |f|
-        //   = text_field_tag("q", "")
-        //   = submit_tag("Search")
+  - if user_signed_in?
+    #header.group
+      .container_12
+        .grid_9
+          %ul#navigation
+            %li= link_to("Browse Assets", root_path)
+            %li= link_to("Upload New Asset", new_asset_path)
+            - if current_user.role?("Admin")
+              %li= link_to("Manage Users", users_path)
+            %li= raw("Signed in as #{current_user.email} (#{link_to("Logout", destroy_user_session_path)})")
+
+        .grid_3.text-right
+          = form_tag(search_assets_path) do |f|
+            = text_field_tag("q", "", :placeholder => "Search for assets...")
 
   #content.group
     .container_12
@@ -35,7 +38,7 @@
         %p Trolley - Asset Manager
 
       .grid_6.text-right
-        %p= link_to("https://github.com/sniperd/trolley.git")
+        %p= link_to("https://github.com/sniperd/trolley", "https://github.com/sniperd/trolley", :target => "_blank")
 
   = include_javascripts(:common)
   = yield(:javascript)

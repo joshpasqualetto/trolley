@@ -7,9 +7,24 @@ module ApplicationHelper
     }.join
   end
 
-  def display_tags(tags)
+  def display_tags(tags, options = {})
+    options[:tagged_with] ||= false
+
+    tags = tags.collect { |t| link_to(t.name, search_assets_path(:q => t.name)) }.join(", ")
     content_tag("p", :class => "tags") do
-      tags.collect { |t| link_to(t.name, search_assets_path(:q => t.name)) }.join(", ")
+      if options[:tagged_with]
+        "<strong>Tagged With:</strong> #{tags}"
+      else
+        tags
+      end
+    end
+  end
+
+  def thumbnail_uri(asset, size)
+    if File.exists?(asset.file.path(size))
+      image_tag(asset.file.url(size))
+    else
+      image_tag("/assets/default/#{size}.png")
     end
   end
 end

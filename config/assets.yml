@@ -12,4 +12,6 @@ stylesheets:
     - public/stylesheets/reset.css
     - public/stylesheets/grid.css
     - public/stylesheets/tags.css
+    - public/stylesheets/formtastic.css
+    - public/stylesheets/formtastic_changes.css
     - public/stylesheets/application.css

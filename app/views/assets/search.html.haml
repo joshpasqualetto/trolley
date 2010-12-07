@@ -1,4 +1,8 @@
 - unless @assets.empty?
-  = render(:partial => "summary", :collection => @assets)
+  .grid_12
+    %h2= "Results for '#{params[:q]}'"
+  = render(@assets)
 - else
-  %p= "No assets match '#{params[:q]}'"
+  .grid_12
+    %h2= "Results for '#{params[:q]}'"
+    %p= "No assets match '#{params[:q]}'"

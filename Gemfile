@@ -6,7 +6,6 @@ gem "autotest-rails", :group => [:test]
 gem "bistro_car"
 gem "cancan"
 gem "capybara", "0.4.0", :group => [:cucumber]
-gem "carrierwave", "0.5.0"
 gem "cover_me", ">= 1.0.0.rc4", :group => [:test]
 gem "css_sprite", "1.4.10"
 gem "cucumber", :group => [:cucumber]
@@ -24,6 +23,7 @@ gem "mini_magick"
 gem "mocha", :group => [:test]
 gem "mysql2"
 gem "nokogiri"
+gem "paperclip", "2.3.6"
 gem "pickle", :group => [:test, :cucumber]
 gem "rails3-generators", :group => :development
 gem "remarkable_activemodel", ">=4.0.0.alpha4", :group => :test

@@ -1,9 +1,13 @@
 @import "common"
 
 body
-  background-image: url(/images/background.gif) top left
+  background-color: rgba(245, 245, 245, 1)
+  color: lighten($black, 25%)
   font-family: Helvetica, Arial, sans-serif
   font-size: 1em
+
+h1, h2, h3, h4, h5, h6
+  color: lighten($black, 25%)
 
 h2
   font-size: 2.25em
@@ -22,17 +26,41 @@ a
   &.button
     @include button
 
+ul
+  margin-bottom: 1em
+
+  li
+    span
+      font-weight: bold
+
+table
+  width: 100%
+
+  tr
+    th
+      border-bottom: 1px solid lighten($black, 80%)
+      padding: 10px
+      text-align: left
+
+    td
+      padding: 10px
+
+  tr:nth-child(even)
+    background-color: lighten($black, 90%)
+
 #header
   background-color: lighten($black, 25%)
   height: 1.35em
   margin-bottom: 1em
   padding: .25em
 
-  ul
+  ul#navigation
     li
       border-right: 1px solid lighten($black, 35%)
+      color: darken($white, 25%)
       display: inline-block
-      margin-right: 1em
+      font-size: .75em
+      margin-right: .75em
       padding-right: 1em
 
       &:last-child
@@ -40,22 +68,77 @@ a
 
       a
         color: darken($white, 25%)
-        font-size: .75em
         text-decoration: none
 
         &:hover
           color: $white
 
+  input
+    border: 0 none
+    padding: 2px 5px
+    width: 15em
+
 #content
   margin-bottom: 3em
 
+  #flash_messages
+    border: 1px solid lighten($black, 90%)
+    margin-bottom: 1em
+
+    p
+      margin: 0
+      padding: .5em 1em
+
+      &.error
+        background-color: lighten(red, 25%)
+
+      &.notice
+        background-color: lighten(yellow, 25%)
+
+      &.warning
+        background-color: lighten(red, 45%)
+
   .asset-summary
-    @include box-shadow(0px, 1px, 5px, lighten($black, 90%))
     background-color: $white
+    border: 1px solid lighten($black, 90%)
     margin-bottom: 1em
     padding: 10px
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5))
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 )
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3)
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3)
+
+    &:before
+      z-index: -2
+      position: absolute
+      background: transparent
+      width: 70%
+      height: 55%
+      content: ''
+      left: 15px
+      bottom: 22px
+      -webkit-transform: skew(-15deg) rotate(-5deg)
+      -webkit-box-shadow: -5px 6px 10px rgba(0, 0, 0, 0.1)
+      -moz-transform: skew(-15deg) rotate(-5deg)
+      -moz-box-shadow: -5px 6px 10px rgba(0, 0, 0, 0.1)
+
+    &:after
+      z-index: -1
+      position: absolute
+      background: transparent
+      width: 70%
+      height: 55%
+      content: ''
+      right: 15px
+      bottom: 22px
+      -webkit-transform: skew(15deg) rotate(5deg)
+      -webkit-box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1)
+      -moz-transform: skew(15deg) rotate(5deg)
+      -moz-box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1)
 
     h3
+      overflow: hidden
       text-shadow: 0 1px 3px lighten($black, 80%)
 
     img
@@ -69,6 +152,29 @@ a
 
       a
         color: lighten($black, 60%)
+
+  .asset-download
+    width: 400px
+
+    img
+      @include box-shadow(0px, 1px, 5px, lighten($black, 90%))
+
+    a
+      @include box-shadow(0px, 1px, 5px, lighten($black, 90%))
+      background-color: lighten($black, 25%)
+      color: $white
+      display: block
+      margin-bottom: .25em
+      padding: 5px
+
+      &:hover
+        background-color: lighten($black, 45%)
+
+  #related-assets
+    .grid_12
+      border-top: 1px solid lighten($black, 90%)
+      margin-top: 1em
+      padding-top: 1em
 
 #footer
   .container_12

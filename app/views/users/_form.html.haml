@@ -1,0 +1,4 @@
+= semantic_form_for(@user) do |f|
+  = f.inputs(:email, :password, :password_confirmation)
+  = f.input(:role_ids, :as => :check_boxes, :collection => Role.all)
+  = f.buttons
