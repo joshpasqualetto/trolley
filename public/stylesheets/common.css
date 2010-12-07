@@ -5,6 +5,9 @@
   clear: both;
   visibility: hidden; }
 
+.clear {
+  clear: both; }
+
 .left {
   float: left; }
 

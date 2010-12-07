@@ -56,8 +56,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
-    carrierwave (0.5.0)
-      activesupport (~> 3.0.0)
     celerity (0.8.4)
     childprocess (0.1.4)
       ffi (~> 0.6.3)
@@ -125,6 +123,9 @@ GEM
       rake
     mysql2 (0.2.6)
     nokogiri (1.4.4)
+    paperclip (2.3.6)
+      activerecord
+      activesupport
     pickle (0.4.3)
       cucumber (>= 0.8)
       rake
@@ -220,7 +221,6 @@ DEPENDENCIES
   bistro_car
   cancan
   capybara (= 0.4.0)
-  carrierwave (= 0.5.0)
   cover_me (>= 1.0.0.rc4)
   css_sprite (= 1.4.10)
   cucumber
@@ -238,6 +238,7 @@ DEPENDENCIES
   mocha
   mysql2
   nokogiri
+  paperclip (= 2.3.6)
   pickle
   rails (= 3.0.1)
   rails3-generators

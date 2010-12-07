@@ -1,4 +1,5 @@
 - unless @assets.empty?
-  = render(:partial => "summary", :collection => @assets)
+  = render(@assets)
 - else
-  %p There are no assets.
+  .grid_12
+    %p There are no assets.

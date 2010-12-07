@@ -1,4 +1,5 @@
 class AssetsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :find_asset, :except => [ :index, :search, :new, :create ]
   before_filter :format_tag_list, :only => [ :create, :update ]
 
@@ -10,17 +11,17 @@ class AssetsController < ApplicationController
   end
 
   def search
-    # search Asset.search { fulltext 'exhaust'}.results
     @assets = Asset.search { keywords(params[:q]) }.results
     respond_with(@assets, :include => :tags, :except => :file)
   end
 
   def show
     @asset = Asset.find(params[:id])
+    @related_assets = @asset.related(@asset.tags.join(" "))
   end
 
   def download
-    send_file(@asset.file.path)
+    send_file(@asset.file.path, :filename => @asset.file.original_filename)
   end
 
   def new
@@ -28,7 +29,7 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = Asset.new(params[:asset])
+    @asset = current_user.assets.new(params[:asset])
     if @asset.save
       redirect_to(@asset, :notice => "Asset creation successful")
     else
