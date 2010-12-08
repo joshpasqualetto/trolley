@@ -24,7 +24,7 @@ module ApplicationHelper
     if File.exists?(asset.file.path(size))
       image_tag(asset.file.url(size))
     else
-      image_tag("/assets/default/#{size}.png")
+      image_tag("/images/default/#{size}.png")
     end
   end
 end
