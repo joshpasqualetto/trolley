@@ -10,10 +10,10 @@ namespace :convert do
     File.open(args[:data_file], "r") do |f|
       i = 0
       while (line = f.gets) do
-        fields = line.force_encoding("ISO-8859-1").split("\t") if i == 2
+        fields = line.split("\t") if i == 2
 
         if i > 5
-          r = line.force_encoding("ISO-8859-1").split("\t")
+          r = line.split("\t")
 
           record = {}
           fields.each_with_index do |k, i|
@@ -29,15 +29,20 @@ namespace :convert do
           record["Tags"] = record["Tags"].join(",")
 
           if Asset.where(:identifier => record["Asset Identifier"]).count == 0
-            asset = user.assets.new(
-              :name => record["Asset Name"],
-              :description => record["Notes"],
-              :file => File.new(File.join(args[:volume], record["Folder Name"], record["Asset Name"])),
-              :tag_list => record["Tags"])
-            asset.identifier = record["Asset Identifier"]
-            asset.created_at = Date.parse(record["Asset Creation Date"])
-            asset.updated_at = Date.parse(record["Asset Modification Date"])
-            asset.save!
+            begin
+              asset = user.assets.new(
+                :name => record["Asset Name"],
+                :description => record["Notes"],
+                :file => File.new(File.join(args[:volume], record["Folder Name"], record["Asset Name"])),
+                :tag_list => record["Tags"])
+              asset.identifier = record["Asset Identifier"]
+              asset.created_at = Date.parse(record["Asset Creation Date"])
+              asset.updated_at = Date.parse(record["Asset Modification Date"])
+              asset.save!
+            rescue Exception => e
+              puts "\nProblem with asset: #{record["Asset Identifier"]}"
+              puts e.backtrace
+            end
           end
 
           print "."

@@ -24,7 +24,7 @@ class AssetsController < ApplicationController
   end
 
   def download
-    send_file(@asset.file.path, :filename => @asset.file.original_filename)
+    send_file(@asset.file.path, :filename => @asset.file.original_filename, :type => @asset.file.content_type)
   end
 
   def new
