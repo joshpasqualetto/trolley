@@ -1,9 +1,11 @@
 .bundle
+config/deploy.rb
 db/*.sqlite3
 log/*.log
 tmp/**/*
 solr/data/**/*
 config/database.yml
+config/database.yml.production
 coverage*
 public/uploads/**/*
 public/assets/**/*
