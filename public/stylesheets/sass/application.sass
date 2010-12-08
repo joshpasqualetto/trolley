@@ -1,7 +1,6 @@
 @import "common"
 
 body
-  // background-color: rgba(245, 245, 245, 1)
   background-color: rgba(100, 100, 100, 1)
   color: darken($white, 10%)
   font-family: Helvetica, Arial, sans-serif
@@ -110,36 +109,8 @@ table
     background: -moz-linear-gradient(top, #ffffff 75%, #e5e5e5 100%)
     background: -webkit-gradient(linear, left top, left bottom, color-stop(75%,#ffffff), color-stop(100%,#e5e5e5))
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 )
-    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
-    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
-
-    &:before
-      z-index: -2
-      position: absolute
-      background: transparent
-      width: 70%
-      height: 55%
-      content: ''
-      left: 15px
-      bottom: 22px
-      -webkit-transform: skew(-15deg) rotate(-5deg)
-      -webkit-box-shadow: -5px 6px 10px rgba(0, 0, 0, 0.1)
-      -moz-transform: skew(-15deg) rotate(-5deg)
-      -moz-box-shadow: -5px 6px 10px rgba(0, 0, 0, 0.1)
-
-    &:after
-      z-index: -1
-      position: absolute
-      background: transparent
-      width: 70%
-      height: 55%
-      content: ''
-      right: 15px
-      bottom: 22px
-      -webkit-transform: skew(15deg) rotate(5deg)
-      -webkit-box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1)
-      -moz-transform: skew(15deg) rotate(5deg)
-      -moz-box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1)
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4)
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4)
 
     h3
       font-size: 1em
