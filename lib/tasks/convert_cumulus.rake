@@ -5,6 +5,8 @@ namespace :convert do
   task(:cumulus, :volume, :data_file) do |t, args|
     puts "Starting Conversion..."
 
+    user = User.first
+
     File.open(args[:data_file], "r") do |f|
       i = 0
       while (line = f.gets) do
@@ -27,7 +29,7 @@ namespace :convert do
           record["Tags"] = record["Tags"].join(",")
 
           if Asset.where(:identifier => record["Asset Identifier"]).count == 0
-            asset = Asset.new(
+            asset = user.assets.new(
               :name => record["Asset Name"],
               :description => record["Notes"],
               :file => File.new(File.join(args[:volume], record["Folder Name"], record["Asset Name"])),
