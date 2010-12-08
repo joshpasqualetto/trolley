@@ -1,7 +1,5 @@
-.grid_6.prefix_3
-  %h2
-    %span Sign
-    In
+.grid_12
+  %h2 Sign In
 
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     %fieldset.inputs
@@ -12,12 +10,9 @@
         %li
           = f.label(:password)
           = f.password_field(:password, :class => "large")
-        %li
-          = f.check_box(:remember_me)
-          = f.label(:remember_me, :class => "checkbox")
 
     %fieldset.buttons
       %ol
-        %li= f.submit("Sign in")
+        %li= f.submit("Sign In", :class => "button")
 
   = render(:partial => "devise/shared/links")

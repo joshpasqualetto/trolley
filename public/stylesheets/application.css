@@ -40,9 +40,36 @@ h3 {
   margin-bottom: 0.5em; }
 
 p {
+  line-height: 1.5em;
   margin-bottom: 1em; }
   p.small {
     font-size: 0.75em; }
+
+input.button {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d5d96c), to(#939300));
+  border: 0 none;
+  color: white;
+  display: inline-block;
+  font-family: Helvetica, Arial, Verdana, sans;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-shadow: 0 0 3px #adb22d; }
 
 a {
   color: white;
@@ -75,9 +102,11 @@ a {
 
 ul {
   margin-bottom: 1em; }
-  ul li span {
-    color: #999999;
-    font-weight: bold; }
+  ul li {
+    margin-bottom: 0.5em; }
+    ul li span {
+      color: #999999;
+      font-weight: bold; }
 
 table {
   width: 100%; }
@@ -122,11 +151,11 @@ table {
       margin: 0;
       padding: 0.5em 1em; }
       #content #flash_messages p.error {
-        background-color: #ff8080; }
+        background-color: rgba(255, 0, 0, 0.25); }
       #content #flash_messages p.notice {
-        background-color: #ffff80; }
+        background-color: rgba(255, 255, 0, 0.25); }
       #content #flash_messages p.warning {
-        background-color: #ffe5e5; }
+        background-color: rgba(255, 138, 0, 0.25); }
   #content .asset-summary {
     background-color: white;
     border: 1px solid #e6e6e6;
@@ -177,6 +206,16 @@ table {
   #content .pagination {
     margin-top: 2em;
     text-align: center; }
+
+fieldset {
+  margin-bottom: 2em; }
+  fieldset.buttons {
+    margin-left: 155px; }
+  fieldset ol li {
+    margin-bottom: 0.5em; }
+    fieldset ol li label {
+      display: inline-block;
+      width: 150px; }
 
 #footer .container_12 {
   border-top: 1px solid #e6e6e6;

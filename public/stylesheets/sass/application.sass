@@ -17,10 +17,14 @@ h3
   margin-bottom: .5em
 
 p
+  line-height: 1.5em
   margin-bottom: 1em
 
   &.small
     font-size: .75em
+
+input.button
+  @include button
 
 a
   color: $white
@@ -33,6 +37,8 @@ ul
   margin-bottom: 1em
 
   li
+    margin-bottom: .5em
+
     span
       color: lighten($black, 60%)
       font-weight: bold
@@ -93,13 +99,13 @@ table
       padding: .5em 1em
 
       &.error
-        background-color: lighten(red, 25%)
+        background-color: rgba(255, 0, 0, .25)
 
       &.notice
-        background-color: lighten(yellow, 25%)
+        background-color: rgba(255, 255, 0, .25)
 
       &.warning
-        background-color: lighten(red, 45%)
+        background-color: rgba(255, 138, 0, .25)
 
   .asset-summary
     background-color: $white
@@ -159,6 +165,20 @@ table
   .pagination
     margin-top: 2em
     text-align: center
+
+fieldset
+  margin-bottom: 2em
+
+  &.buttons
+    margin-left: 155px
+
+  ol
+    li
+      margin-bottom: .5em
+
+      label
+        display: inline-block
+        width: 150px
 
 #footer
   .container_12
