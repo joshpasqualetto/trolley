@@ -13,7 +13,7 @@ module ApplicationHelper
     tags = tags.collect { |t| link_to(t.name, search_assets_path(:q => t.name)) }.join(", ")
     content_tag("p", :class => "tags") do
       if options[:tagged_with]
-        "<strong>Tagged With:</strong> #{tags}"
+        "<span>Tagged With:</span> #{tags}"
       else
         tags
       end
