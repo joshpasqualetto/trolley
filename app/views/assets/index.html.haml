@@ -1,5 +1,7 @@
 - unless @assets.empty?
-  = render(@assets)
+  .group= render(@assets)
+  .pagination= will_paginate(@assets)
+
 - else
   .grid_12
     %p There are no assets.

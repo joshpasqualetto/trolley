@@ -114,7 +114,6 @@ table {
 #content {
   margin-bottom: 3em; }
   #content #flash_messages {
-    border: 1px solid #e6e6e6;
     margin-bottom: 1em; }
     #content #flash_messages p {
       margin: 0;
@@ -130,11 +129,11 @@ table {
     border: 1px solid #e6e6e6;
     margin-bottom: 1em;
     padding: 10px;
-    background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+    background: -moz-linear-gradient(top, white 75%, #e5e5e5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, white), color-stop(100%, #e5e5e5));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
-    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); }
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); }
     #content .asset-summary:before {
       z-index: -2;
       position: absolute;
@@ -163,9 +162,10 @@ table {
       -moz-box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1); }
     #content .asset-summary h3 {
       overflow: hidden;
-      text-shadow: 0 1px 3px #cccccc; }
+      white-space: nowrap; }
     #content .asset-summary img {
-      margin-bottom: 1em; }
+      display: block;
+      margin-bottom: 0.5em; }
     #content .asset-summary p.tags {
       color: #999999;
       height: 1.25em;
@@ -194,6 +194,9 @@ table {
     border-top: 1px solid #e6e6e6;
     margin-top: 1em;
     padding-top: 1em; }
+  #content .pagination {
+    margin-top: 2em;
+    text-align: center; }
 
 #footer .container_12 {
   border-top: 1px solid #e6e6e6;
