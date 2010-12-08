@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
-         :token_authenticatable, :recoverable, :rememberable,
-         :trackable, :confirmable, :validateable
+  devise :database_authenticatable, :token_authenticatable,
+          :recoverable, :rememberable, :trackable,
+          :confirmable, :validateable
 
   has_many :assets
   has_and_belongs_to_many :roles
