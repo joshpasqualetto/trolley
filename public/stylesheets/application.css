@@ -24,13 +24,13 @@
   text-align: right !important; }
 
 body {
-  background-color: #f5f5f5;
-  color: #404040;
+  background-color: #646464;
+  color: #e6e6e6;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1em; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #404040; }
+  color: #e6e6e6; }
 
 h2 {
   font-size: 2em;
@@ -45,7 +45,7 @@ p {
     font-size: 0.75em; }
 
 a {
-  color: #cc6600;
+  color: white;
   text-decoration: none; }
   a.button {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
@@ -63,7 +63,7 @@ a {
     border-bottom-right-radius: 5px;
     -moz-border-bottom-right-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#d5d96c), to(#adb22d));
+    background: -webkit-gradient(linear, left top, left bottom, from(#d5d96c), to(#939300));
     border: 0 none;
     color: white;
     display: inline-block;
@@ -88,7 +88,7 @@ table {
   table tr td {
     padding: 10px; }
   table tr:nth-child(even) {
-    background-color: #e6e6e6; }
+    background-color: rgba(255, 255, 255, 0.25); }
 
 #header {
   background-color: #404040;
@@ -168,6 +168,8 @@ table {
       margin-bottom: 0.25em;
       overflow: hidden;
       white-space: nowrap; }
+      #content .asset-summary h3 a {
+        color: #cc6600; }
     #content .asset-summary img {
       display: block;
       margin-bottom: 0.5em; }
