@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20101206191714) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
+    t.string   "identifier"
     t.string   "name"
     t.text     "description"
     t.string   "file_file_name"

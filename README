@@ -5,3 +5,6 @@ rake db:create
 rake db:migrate
 rake sunspot:solr:start
 rails server
+
+cat export.cre | perl -pe 's/^M/\n/g' > formatted_export.cre
+rake sunspot:reindex[1000,Asset]

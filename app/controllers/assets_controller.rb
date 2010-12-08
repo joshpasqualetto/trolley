@@ -6,12 +6,15 @@ class AssetsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @assets = Asset.order("created_at DESC").paginate(:per_page => 50, :page => params[:page])
+    @assets = Asset.order("created_at DESC").paginate(:per_page => 20, :page => params[:page])
     respond_with(@assets, :include => :tags, :except => :file)
   end
 
   def search
-    @assets = Asset.search { keywords(params[:q]) }.results
+    @assets = Asset.search { 
+      keywords(params[:q])
+      paginate(:per_page => 20, :page => params[:page])
+    }.results
     respond_with(@assets, :include => :tags, :except => :file)
   end
 
