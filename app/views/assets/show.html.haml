@@ -8,8 +8,8 @@
       |
       = link_to("Delete Asset", asset_path(@asset), :method => :delete)
 
-  %h2= @asset.name
   %ul.metadata
+    %li= raw("<span>File Name:</span> #{@asset.file.original_filename}")
     %li= raw("<span>Created At:</span> #{@asset.created_at.to_s(:long)}")
     %li= raw("<span>Updated At:</span> #{@asset.created_at.to_s(:long)}")
     %li= display_tags(@asset.tags, :tagged_with => true)

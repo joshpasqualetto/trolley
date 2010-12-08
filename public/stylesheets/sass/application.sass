@@ -1,13 +1,14 @@
 @import "common"
 
 body
-  background-color: rgba(245, 245, 245, 1)
-  color: lighten($black, 25%)
+  // background-color: rgba(245, 245, 245, 1)
+  background-color: rgba(100, 100, 100, 1)
+  color: darken($white, 10%)
   font-family: Helvetica, Arial, sans-serif
   font-size: 1em
 
 h1, h2, h3, h4, h5, h6
-  color: lighten($black, 25%)
+  color: darken($white, 10%)
 
 h2
   font-size: 2em
@@ -23,7 +24,7 @@ p
     font-size: .75em
 
 a
-  color: #C60
+  color: $white
   text-decoration: none
 
   &.button
@@ -50,7 +51,7 @@ table
       padding: 10px
 
   tr:nth-child(even)
-    background-color: lighten($black, 90%)
+    background-color: rgba(255, 255, 255, .25)
 
 #header
   background-color: lighten($black, 25%)
@@ -145,6 +146,9 @@ table
       margin-bottom: .25em
       overflow: hidden
       white-space: nowrap
+
+      a
+        color: #C60
 
     img
       display: block
