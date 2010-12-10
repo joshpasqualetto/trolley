@@ -7,5 +7,6 @@ solr/data/**/*
 config/database.yml
 config/database.yml.production
 coverage*
+Gemfile.lock
 public/uploads/**/*
 public/assets/**/*
