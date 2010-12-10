@@ -9,7 +9,7 @@ class Asset < ActiveRecord::Base
   has_attached_file :file,
     :url => "/assets/:id_partition/:style_:basename.:extension",
     :path => ":rails_root/public/assets/:id_partition/:style_:basename.:extension",
-    :styles => { :medium => "400x300#", :thumb => "200x150#" }
+    :styles => { :medium => [ "400x300#", :jpg ], :thumb => [ "200x150#", :jpg ] }
 
   before_post_process :check_file_type_for_processing
   before_create :set_identifier
@@ -29,7 +29,9 @@ class Asset < ActiveRecord::Base
   def related(tags)
     Asset.search {
       keywords(tags)
-      without(:id).any_of([ self.id ])
+      # TODO: Figure out why this is causing errors.
+      # RSolr::RequestError (Solr Response: For_input_string_23882343507840__javalangNumberFormatException_For_input_string_23882343507840
+      # without(:id).any_of([ self.id ])
       paginate(:per_page => 8, :page => 1)
     }.results
   end
